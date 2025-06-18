@@ -54,3 +54,6 @@ test_arsclassica_manychapters.pdf
 ClassicThesis.tps
 bitbucket-pipelines.yml
 .DS_Store
+*.potx
+*.dotx
+*.docx
