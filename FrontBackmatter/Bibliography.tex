@@ -13,6 +13,10 @@
   % \addcontentsline{toc}{chapter}{\tocEntry{References}}%
   \chapter*{References}%
 }
+% Force bibliography entries to wrap if they exceed the margin
+\setlength{\bibhang}{1.5em} % hanging indent
+\sloppy % allow line breaks to avoid overfull hboxes
+\setlength{\baselineskip}{1.5\baselineskip} % set line spacing to 1.5
 \printbibliography[heading=bibintoc]
 
 % Old version, will be removed later

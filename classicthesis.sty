@@ -186,7 +186,7 @@
 	        BoldFont= *-bold,%
 	        BoldItalicFont = *-bolditalic,%
          ]%
-         \linespread{1.05} % a bit more for Palatino
+         \linespread{1.5} % a bit more for Palatino
          \RequirePackage{unicode-math}
          \setmathfont{texgyrepagella-math}[Extension= .otf]%
        }{\relax} % use class' default font
@@ -213,7 +213,7 @@
        % default: Palatino
          \PassOptionsToPackage{osf,sc}{mathpazo}%
          \RequirePackage{mathpazo} % Palatino with real small caps and old style figures
-         \linespread{1.05} % a bit more for Palatino
+         \linespread{1.5} % a bit more for Palatino
        }{\relax}
 
        \ifthenelse{\boolean{ct@beramono}}%
@@ -282,8 +282,8 @@
             % \areaset{336pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip 10pt
             \setlength{\marginparwidth}{15mm}%
             \setlength{\marginparsep}{1em}%
-            \setlength{\headheight}{12mm} % default is often 12pt
-            \setlength{\footskip}{12mm}
+            \setlength{\headheight}{15mm} % default is often 12pt
+            \setlength{\footskip}{7mm}
     }{\relax}
 
 % Here are some suggestions for the text widths and heights:
@@ -388,9 +388,9 @@
         {\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}}
     \renewcommand{\sectionmark}[1]{\markright{\textsc{\thesection}\enspace\spacedlowsmallcaps{#1}}}
     % Reduce space between header and page number by decreasing \kern2em to \kern1em
-    \lehead{\mbox{\llap{\small\pagemark\kern1em}\headmark\hfil}}
-    \rohead{\mbox{\hfil{\headmark}\rlap{\small\kern1em\pagemark}}}
-    \ofoot[\small\pagemark]{}% only for plain.scrheadings page style (first page of a chapter)
+    \lehead{\mbox{\headmark\hfil}}
+    \rohead{\mbox{\hfil\headmark}}
+    \ofoot[\small\pagemark]{\small\pagemark}% page number in the outer foot for all pages
     \renewcommand{\headfont}{\small}
 %    \DeclareRobustCommand{\fixBothHeadlines}[2]{} % <--- ToDo
     % hack to get the content headlines right (thanks, Lorenzo!)

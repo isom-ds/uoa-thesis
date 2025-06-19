@@ -130,11 +130,11 @@ da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 \part*{Co-Authorship Forms}
 \includepdf[
   pages=-,
-  scale=0.9,
+  scale=0.85,
   pagecommand={%
     \thispagestyle{empty}
     \begin{tikzpicture}[remember picture, overlay]
-      \node at (current page.south) [yshift=1.5cm] {\thepage};
+    \node at (current page.south east) [anchor=south east, xshift=-2.5cm, yshift=1.5cm] {\small\thepage};
     \end{tikzpicture}
   }
 ]{uoa_forms/co-authorship-form.pdf}
