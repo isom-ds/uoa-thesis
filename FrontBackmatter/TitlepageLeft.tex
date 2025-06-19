@@ -1,0 +1,29 @@
+%*******************************************************
+% Titlepage
+%*******************************************************
+\begin{titlepage}
+    %\pdfbookmark[1]{\myTitle}{titlepage}
+    % if you want the titlepage to be centered, uncomment and fine-tune the line below (KOMA classes environment)
+\hspace*{-0.75cm}%
+\includegraphics[width=0.4\textwidth]{gfx/00_UoA-Logo-Primary-RGB-Large.png}
+\vspace{1.5cm}
+
+
+\setlength{\fboxsep}{1.5em} % Padding inside the box
+\setlength{\fboxrule}{0pt}  % Thickness of the box border
+\fbox{%
+    \begin{minipage}[c][\dimexpr\textheight-6cm\relax]{0.85\textwidth}
+        \large
+        \noindent\color{CTtitle}\spacedallcaps{\textbf{\myTitle}} \\ \bigskip
+
+        \vspace{1.5cm} % Adjust as needed
+        \noindent\spacedlowsmallcaps{\myName} \par
+
+        \vfill
+        \small
+        \noindent\thesisDetails{partial}{Doctor of Philosophy}{Information Systems}{2025}
+    \end{minipage}
+}
+
+
+\end{titlepage}
