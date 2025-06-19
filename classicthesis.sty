@@ -157,14 +157,19 @@
 % ********************************************************************
 \PassOptionsToPackage{dvipsnames}{xcolor}
     \RequirePackage{xcolor} % [dvipsnames]
-\definecolor{CTsemi}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
-\definecolor{CTcitation}{rgb}{0,0.5,0} % WebGreen
-\definecolor{CTurl}{named}{RoyalBlue} % Maroon
-\definecolor{CTtitle}{named}{RoyalBlue} % Maroon {cmyk}{0, 0.87, 0.68, 0.32}
-\definecolor{CTlink}{named}{RoyalBlue} % RoyalBlue {cmyk}{1, 0.50, 0, 0}
+\definecolor{CTsemi}{cmyk}{1, 0.94, 0.19, 0.49, 0.55} % chapter numbers will be semi transparent
+\definecolor{CTcitation}{cmyk}{0.71, 0, 0, 0} % Mahina (Early Mornin Light) - Light Blue
+\definecolor{CTurl}{cmyk}{0.71, 0, 0, 0} % Mahina (Early Mornin Light) - Light Blue
+\definecolor{CTtitle}{cmyk}{1, 0.94, 0.19, 0.49} % Waitemata - Deep Blue
+\definecolor{CTlink}{cmyk}{0.71, 0, 0, 0} % Mahina (Early Mornin Light) - Light Blue
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
 \definecolor{webgreen}{rgb}{0,0.5,0}
 \definecolor{webbrown}{rgb}{0.6,0,0}
+\definecolor{Mahina}{cmyk}{0.71, 0, 0, 0} % Mahina (Early Mornin Light) - Light Blue
+\definecolor{Waitemata}{cmyk}{1, 0.94, 0.19, 0.49} % Waitemata - Deep Blue
+\definecolor{Azure}{rgb}{1, 0.37, 0.30} % Azure - Light Blue
+\definecolor{Hinatore}{rgb}{0.81, 0.36, 0.95} % Hinatore (Glimmer of Light) - Purple
+\definecolor{Whenua}{rgb}{0.10, 0.80, 0.50} % Whenua - Green
 
 % ********************************************************************
 % Font Stuff
@@ -273,10 +278,10 @@
 \ifthenelse{\equal{\ct@paper}{a4}}%
     {% A4 210mm x 297mm
             \PackageInfo{classicthesis}{A4 paper, Palatino or other}
-            \areaset[current]{336pt}{750pt} % ~ 336 * factor 2 + 33 head + 42 \the\footskip
+            \areaset[current]{450pt}{750pt} % ~ 336 * factor 2 + 33 head + 42 \the\footskip
             % \areaset{336pt}{761pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip 10pt
-            \setlength{\marginparwidth}{7em}%
-            \setlength{\marginparsep}{2em}%
+            \setlength{\marginparwidth}{12mm}%
+            \setlength{\marginparsep}{1em}%
     }{\relax}
 
 % Here are some suggestions for the text widths and heights:
@@ -415,9 +420,14 @@
 }{\relax}
 % chapters
 % something like Bringhurst
-  \titleformat{\chapter}[display]%
-  {\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{CTsemi}\chapterNumber\thechapter}}{0pt}%
-  {\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+\titleformat{\chapter}[display]%
+    {\relax}{%
+        \makebox[0pt][l]{%
+            \hspace*{\dimexpr\linewidth-2.5em}% use \linewidth to fit within main text block
+            \raisebox{5pt}[0pt][0pt]{\color{CTsemi}\chapterNumber\thechapter}%
+        }%
+    }{0pt}%
+    {\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
 
 % sections \FloatBarrier
 \titleformat{\section}

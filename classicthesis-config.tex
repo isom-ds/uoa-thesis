@@ -31,10 +31,10 @@
 \PassOptionsToPackage{
   drafting=true,    % print version information on the bottom of the pages
   tocaligned=false, % the left column of the toc will be aligned (no indentation)
-  dottedtoc=false,  % page numbers in ToC flushed right
+  dottedtoc=true,  % page numbers in ToC flushed right
   eulerchapternumbers=false, % use AMS Euler for chapter font (otherwise Palatino)
   floatperchapter=true,     % numbering per chapter for all floats (i.e., Figure 1.1)
-  eulermath=false,  % use awesome Euler fonts for mathematical formulae (only with pdfLaTeX)
+  eulermath=true,  % use awesome Euler fonts for mathematical formulae (only with pdfLaTeX)
   beramono=true,    % toggle a nice monospaced font (w/ bold)
   palatino=true,    % deactivate standard font for loading another one, see the last section at the end of this file for suggestions
   %linedheaders=true, % obsolete / available for backwards compatibility
@@ -44,10 +44,16 @@
 % ****************************************************************************************************
 % 2. Personal data and user ad-hoc commands (insert your own data here)
 % ****************************************************************************************************
-\newcommand{\myTitle}{A Classic Thesis Style\xspace}
+\newcommand{\myTitle}{A Classic Thesis Style\\University of Auckland Formatting Guidelines\xspace}%
+\newcommand{\myName}{Brice Valentin Kok-Shun\xspace}
+\newcommand{\thesisDetails}[4]{%
+  A thesis submitted\if\relax\detokenize{#1}\relax\else\ in #1\fi\ fulfilment of the requirements for the degree of \\
+  #2 in #3, the University of Auckland, #4. \\
+  This thesis is for examination purposes only and is confidential to the examination process.
+}
+\newcommand{\myVersion}{\classicthesis}
 \newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
 \newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
-\newcommand{\myName}{André Miede \& Ivo Pletikosić\xspace}
 \newcommand{\myProf}{Put name here\xspace}
 \newcommand{\myOtherProf}{Put name here\xspace}
 \newcommand{\mySupervisor}{Put name here\xspace}
@@ -56,7 +62,6 @@
 \newcommand{\myUni}{Put data here\xspace}
 \newcommand{\myLocation}{Saarbrücken\xspace}
 \newcommand{\myTime}{February 2025\xspace}
-\newcommand{\myVersion}{\classicthesis}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands

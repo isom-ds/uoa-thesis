@@ -32,16 +32,20 @@
     \WarningFilter{scrreprt}{Usage of package `titlesec'}
     %\WarningFilter{scrreprt}{Activating an ugly workaround}
     \WarningFilter{titlesec}{Non standard sectioning command detected}
-\documentclass[ twoside,openright,titlepage,numbers=noenddot,%1headlines,
-                headinclude,footinclude,cleardoublepage=empty,abstract=on,
-                BCOR=5mm,paper=a4,fontsize=12pt
-                ]{scrreprt}
+\documentclass[ 
+    % twoside, % comment out this line for one-sided printing
+    % BCOR=5mm, % comment out this line for no binding correction
+    openright,titlepage,numbers=noenddot,%1headlines,
+    headinclude,footinclude,cleardoublepage=empty,abstract=on,
+    paper=a4,fontsize=12pt
+]{scrreprt}
 
 %********************************************************************
 % Note: Make all your adjustments in here
 %*******************************************************
 \input{classicthesis-config}
-
+% Include PDF pages
+\usepackage{pdfpages}
 
 %********************************************************************
 % Bibliographies
@@ -53,6 +57,7 @@
 % Hyphenation
 %*******************************************************
 %\hyphenation{put special hyphenation here}
+\usepackage[none]{hyphenat}
 
 % ********************************************************************
 % GO!GO!GO! MOVE IT!
@@ -68,9 +73,9 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
+% \include{FrontBackmatter/DirtyTitlepage}
 \include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
+% \include{FrontBackmatter/Titleback}
 \cleardoublepage\include{FrontBackmatter/Dedication}
 %\cleardoublepage\include{FrontBackmatter/Foreword}
 \cleardoublepage\include{FrontBackmatter/Abstract}
@@ -113,8 +118,11 @@ da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 %*******************************************************
 \pdfbookmark[-1]{Back Matter}{back} % Dummy part bookmark for back matter
 \cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Declaration}
+% \cleardoublepage\include{FrontBackmatter/Declaration}
 \cleardoublepage\include{FrontBackmatter/Colophon}
+\cleardoublepage
+\part*{Co-Authorship Form}
+\includepdf[pages=-]{uoa_forms/co-authorship-form.pdf}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
