@@ -46,6 +46,8 @@
 \input{classicthesis-config}
 % Include PDF pages
 \usepackage{pdfpages}
+% Include TikZ
+\usepackage{tikz}
 
 %********************************************************************
 % Bibliographies
@@ -76,12 +78,13 @@
 % \include{FrontBackmatter/DirtyTitlepage}
 \include{FrontBackmatter/Titlepage}
 % \include{FrontBackmatter/Titleback}
+\cleardoublepage\include{FrontBackmatter/Abstract}
 \cleardoublepage\include{FrontBackmatter/Dedication}
 %\cleardoublepage\include{FrontBackmatter/Foreword}
-\cleardoublepage\include{FrontBackmatter/Abstract}
 % \cleardoublepage\include{FrontBackmatter/Publications}
 \cleardoublepage\include{FrontBackmatter/Acknowledgments}
-\cleardoublepage\include{FrontBackmatter/Contents}
+\cleardoublepage\include{FrontBackmatter/Contents} % Contains list of figures and tables
+
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -119,10 +122,22 @@ da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 \pdfbookmark[-1]{Back Matter}{back} % Dummy part bookmark for back matter
 \cleardoublepage\include{FrontBackmatter/Bibliography}
 % \cleardoublepage\include{FrontBackmatter/Declaration}
-\cleardoublepage\include{FrontBackmatter/Colophon}
+% \cleardoublepage\include{FrontBackmatter/Colophon}
 \cleardoublepage
-\part*{Co-Authorship Form}
-\includepdf[pages=-]{uoa_forms/co-authorship-form.pdf}
+%********************************************************************
+% UoA Forms
+%*******************************************************
+\part*{Co-Authorship Forms}
+\includepdf[
+  pages=-,
+  scale=0.9,
+  pagecommand={%
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]
+      \node at (current page.south) [yshift=1.5cm] {\thepage};
+    \end{tikzpicture}
+  }
+]{uoa_forms/co-authorship-form.pdf}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************

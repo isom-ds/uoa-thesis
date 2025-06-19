@@ -51,17 +51,17 @@
   #2 in #3, the University of Auckland, #4. \\
   This thesis is for examination purposes only and is confidential to the examination process.
 }
-\newcommand{\myVersion}{\classicthesis}
-\newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
-\newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
-\newcommand{\myProf}{Put name here\xspace}
-\newcommand{\myOtherProf}{Put name here\xspace}
-\newcommand{\mySupervisor}{Put name here\xspace}
-\newcommand{\myFaculty}{Put data here\xspace}
-\newcommand{\myDepartment}{Put data here\xspace}
-\newcommand{\myUni}{Put data here\xspace}
-\newcommand{\myLocation}{Saarbrücken\xspace}
-\newcommand{\myTime}{February 2025\xspace}
+\newcommand{\myVersion}{v1.0}
+% \newcommand{\mySubtitle}{An Homage to The Elements of Typographic Style\xspace}
+% \newcommand{\myDegree}{Doktor-Ingenieur (Dr.-Ing.)\xspace}
+% \newcommand{\myProf}{Put name here\xspace}
+% \newcommand{\myOtherProf}{Put name here\xspace}
+% \newcommand{\mySupervisor}{Put name here\xspace}
+% \newcommand{\myFaculty}{Put data here\xspace}
+% \newcommand{\myDepartment}{Put data here\xspace}
+% \newcommand{\myUni}{Put data here\xspace}
+% \newcommand{\myLocation}{Saarbrücken\xspace}
+% \newcommand{\myTime}{February 2025\xspace}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -176,7 +176,10 @@
 % ********************************************************************
 \hypersetup{%
   %draft, % hyperref's draft mode, for printing see below
-  colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+  colorlinks=true, 
+  linktocpage=true, 
+  pdfstartpage=3, 
+  pdfstartview=FitV,
   % uncomment the following line if you want to have black links (e.g., for printing)
   %colorlinks=false, linktocpage=false, pdfstartpage=3, pdfstartview=FitV, pdfborder={0 0 0},%
   breaklinks=true, pageanchor=true,%
@@ -184,10 +187,12 @@
   % pdfpagemode=UseOutlines,%
   plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
   hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
-  urlcolor=CTurl, linkcolor=CTlink, citecolor=CTcitation, %pagecolor=RoyalBlue,%
+  urlcolor=RoyalBlue, 
+  linkcolor=RoyalBlue, 
+  citecolor=RoyalBlue, %pagecolor=RoyalBlue,%
   %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
   pdftitle={\myTitle},%
-  pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},%
+  % pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},%
   pdfsubject={},%
   pdfkeywords={},%
   pdfcreator={pdfLaTeX},%
