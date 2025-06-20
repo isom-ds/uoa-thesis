@@ -4,28 +4,30 @@
 \begin{titlepage}
     %\pdfbookmark[1]{\myTitle}{titlepage}
     % if you want the titlepage to be centered, uncomment and fine-tune the line below (KOMA classes environment)
-\hspace*{-0.75cm}%
-\includegraphics[width=0.4\textwidth]{gfx/00_UoA-Logo-Primary-RGB-Large.png}
-\vspace{1.5cm}
-    \begin{center}
+\makebox[0pt][l]{%
+    \hspace*{-0.85cm}%
+    \raisebox{-0.5cm}[0pt][0pt]{%
+        \includegraphics[width=0.4\textwidth]{gfx/00_UoA-Logo-Primary-RGB-Large.png}
+    }%
+}
+\vspace{2cm}
 
-        \large
-
-        \begingroup
-            \Large
-            \color{CTtitle}\spacedallcaps{\textbf{\myTitle}} \\ \bigskip
-        \endgroup
+\setlength{\fboxsep}{1.5em} % Padding inside the box
+\setlength{\fboxrule}{0pt}  % Thickness of the box border
+\begin{center}
+\fbox{%
+    \begin{minipage}[c][\dimexpr\textheight-3.75cm\relax]{0.875\textwidth}
+        \Large
+        \noindent\color{CTtitle}\spacedallcaps{\textbf{\myTitle}} \\ \bigskip
 
         \vspace{3cm} % Adjust as needed
-
-        {\centering
-            \spacedlowsmallcaps{\myName} \par
-        }
+        \noindent\spacedlowsmallcaps{\myName} \par
 
         \vfill
-
         \small
-        \thesisDetails{partial}{Doctor of Philosophy}{Information Systems}{2025}
+        \noindent\thesisDetails{partial}{Doctor of Philosophy}{Information Systems}{2025}
+    \end{minipage}
+}
+\end{center}
 
-    \end{center}
 \end{titlepage}
