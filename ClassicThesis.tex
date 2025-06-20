@@ -84,7 +84,10 @@
 % \cleardoublepage\include{FrontBackmatter/Publications}
 \cleardoublepage\include{FrontBackmatter/Acknowledgments}
 \cleardoublepage\include{FrontBackmatter/Contents} % Contains list of figures and tables
-
+%********************************************************************
+% UoA Forms
+%*******************************************************
+\cleardoublepage\include{FrontBackmatter/CoAuthorshipForms}
 %********************************************************************
 % Mainmatter
 %*******************************************************
@@ -94,8 +97,9 @@
 %\setcounter{page}{90}
 % use \cleardoublepage here to avoid problems with pdfbookmark
 \cleardoublepage
-\part{Some Kind of Manual}\label{pt:manual}
+\part{Contextual Framework}\label{pt:context}
 \include{Chapters/Chapter01}
+
 \cleardoublepage
 \ctparttext{You can put some informational part preamble text here.
 Illo principalmente su nos. Non message \emph{occidental} angloromanic
@@ -124,20 +128,6 @@ da. Le usate medical addresses pro, europa origine sanctificate nos se.}
 % \cleardoublepage\include{FrontBackmatter/Declaration}
 % \cleardoublepage\include{FrontBackmatter/Colophon}
 \cleardoublepage
-%********************************************************************
-% UoA Forms
-%*******************************************************
-\part*{Co-Authorship Forms}
-\includepdf[
-  pages=-,
-  scale=0.85,
-  pagecommand={%
-    \thispagestyle{empty}
-    \begin{tikzpicture}[remember picture, overlay]
-    \node at (current page.south east) [anchor=south east, xshift=-2.5cm, yshift=1.5cm] {\small\thepage};
-    \end{tikzpicture}
-  }
-]{uoa_forms/co-authorship-form.pdf}
 % ********************************************************************
 % Game Over: Restore, Restart, or Quit?
 %*******************************************************
